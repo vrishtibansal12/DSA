@@ -1,0 +1,35 @@
+A superhero is having a strengh of zero in the beginning. Two integer arrays are given both of length n Each element of the array contams the strength a superhere can get if he takes that particularment. The
+
+superhero can choose one complete array and he can add the elements of the array to his strength Before he does this, he can also perform another operatin tu manomizu his strength can choose two
+
+nes and where and swan the subsaray array with the subarray may
+
+He can apply the mentioned operation ce ne not do anything, before chocorp one complica array, fle
+
+the maximum strength Ive can ge
+
+
+
+
+int ans = 0, curr = 0;
+
+// The superhero can choose one complete array and he can add the elements of the array to his strength.
+for(int i = 0; i < n; i++){
+    curr += array1[i] - array2[i];
+    if(curr < 0) curr = 0;
+    ans = max(ans, curr);
+}
+for(int i = 0; i < n; i++){
+    ans += array2[i];
+}
+int other = 0;
+curr = 0;
+for(int i = 0; i < n; i++){
+    curr += array2[i] - array1[i];
+    if(curr < 0) curr = 0;
+    other = max(other, curr);
+}
+for(int i = 0; i < n; i++){
+    other += array1[i];
+}
+return max(ans, other);
